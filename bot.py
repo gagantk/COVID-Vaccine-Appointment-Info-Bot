@@ -88,8 +88,6 @@ def error(update: Update, context: CallbackContext) -> None:
 
 def main() -> None:
     defaults = Defaults(parse_mode=ParseMode.HTML)
-    NAME = os.environ.get('NAME')
-    PORT = os.environ.get('PORT')
     updater = Updater(constants.TOKEN, defaults=defaults)
 
     dispatcher = updater.dispatcher
@@ -103,10 +101,7 @@ def main() -> None:
         Filters.regex(r'^[1-9]{2}[0-9]{4}$'), check_by_pincode))
     dispatcher.add_error_handler(error)
 
-    updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
-                          url_path=constants.TOKEN,
-                          webhook_url=f"https://{NAME}.herokuapp.com/{constants.TOKEN}")
+    updater.start_polling()
 
     updater.idle()
 
