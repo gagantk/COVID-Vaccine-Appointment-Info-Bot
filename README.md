@@ -7,7 +7,7 @@
 ## How To Deploy
 
 ```
-$ git clone https://github.com/gagantk/COVID-Vaccine-Appointment-Info-Bot
+$ git clone https://github.com/gagantk/COVID-Vaccine-Appointment-Info-Bot.git
 $ cd COVID-Vaccine-Appointment-Info-Bot
 $ python3 -m pip install -r requirements.txt
 $ python3 bot.py
