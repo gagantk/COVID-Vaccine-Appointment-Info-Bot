@@ -17,7 +17,7 @@ class Helper:
             constants.BASE_URL,
             params={
                 'pincode': pincode,
-                'date': (datetime.now() + timedelta(days=1)).strftime(constants.DATE_FORMAT)
+                'date': datetime.now().strftime(constants.DATE_FORMAT)
             },
             headers=constants.HEADERS
         )
