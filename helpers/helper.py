@@ -55,10 +55,10 @@ class Helper:
         for center in self.data[self.pincode]:
             if str(center['center_id']) == center_id:
                 text += f"<b>{center['name']}</b>"
-                text += f"Address: {center['address']}, {center['state_name']}, {center['pincode']}"
+                text += f"\nAddress: {center['address']}, {center['state_name']}, {center['pincode']}"
                 for session in center['sessions']:
                     text += f"\n\n{session['date']}:\n"
-                    text += f"Slots Available: {str(session['available_capacity']) + '🟢' if session['available_capacity'] else 'Fully Booked 🔴'}"
+                    text += f"Slots Available: {str(session['available_capacity']) + ' 🟢' if session['available_capacity'] else 'Fully Booked 🔴'}"
                     if session['slots']:
                         if session['available_capacity']:
                             text += f"\nSlots Timings: {', '.join(session['slots'])}"
